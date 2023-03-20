@@ -1,4 +1,4 @@
-import "../styles/globals.css";
+import "assets/styles/globals.css";
 import type { AppProps } from "next/app";
 import Layout from "components/layouts";
 import { TabsContextProvider } from "context/Tabs";

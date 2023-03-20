@@ -1,4 +1,4 @@
-import HomeComponent from "components/pages/Home";
+import ComingSoon from "components/pages/ComingSoon";
 import Head from "next/head";
 
 export default function Github() {
@@ -7,7 +7,7 @@ export default function Github() {
       <Head>
         <title>Hüseyin Erkal | Github</title>
       </Head>
-      <HomeComponent />
+      <ComingSoon />
     </>
   );
 }

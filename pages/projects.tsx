@@ -1,13 +1,13 @@
-import HomeComponent from "components/pages/Home";
+import Projects from "components/pages/Projects";
 import Head from "next/head";
 
-export default function Projects() {
+export default function ProjectsPage() {
   return (
     <>
       <Head>
         <title>Hüseyin Erkal | Projects</title>
       </Head>
-      <HomeComponent />
+      <Projects />
     </>
   );
 }

@@ -35,7 +35,7 @@ a {
 }
 
 .mono {
-  font-family: "JetBrains Mono", monospace;
+  font-family: "JetBrains Mono", monospace !important;
 }
 
 /* The typing effect */

@@ -1,4 +1,4 @@
-import HomeComponent from "components/pages/Home";
+import ComingSoon from "components/pages/ComingSoon";
 import Head from "next/head";
 
 export default function Articles() {
@@ -7,7 +7,7 @@ export default function Articles() {
       <Head>
         <title>Hüseyin Erkal | Articles</title>
       </Head>
-      <HomeComponent />
+      <ComingSoon />
     </>
   );
 }
