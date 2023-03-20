@@ -13,7 +13,7 @@ const Sidebar = () => {
         <Link
           href="/home"
           className={`flex py-2.5 justify-center border-l-2 border-transparent hover:bg-[#1b1f23] cursor-pointer ${
-            pathname === "/" || (pathname === "home" && "border-l-[#f9826c]")
+            (pathname === "" || pathname === "home") && "border-l-[#f9826c]"
           }`}
           onClick={() => {
             handleAddTab({
