@@ -1,19 +1,75 @@
+import { useTabs } from "context/Tabs";
+import Link from "next/link";
+import { useRouter } from "next/router";
+
 const Sidebar = () => {
+  const router = useRouter();
+  const pathname = router.pathname.split("/")[1];
+  const { handleAddTab } = useTabs();
+
   return (
     <div className="absolute flex flex-col justify-between left-0 top-8 w-16 pb-8 bg-[#24292e] text-white h-[calc(100%-32px)]">
       <div className="flex flex-col">
-        <div className="flex py-2.5 justify-center border-l-2 border-l-[#f9826c] hover:bg-[#1b1f23] cursor-pointer">
+        <Link
+          href="/home"
+          className={`flex py-2.5 justify-center border-l-2 border-transparent hover:bg-[#1b1f23] cursor-pointer ${
+            pathname === "/" || (pathname === "home" && "border-l-[#f9826c]")
+          }`}
+          onClick={() => {
+            handleAddTab({
+              name: "home",
+              title: "Home.tsx",
+              icon: (
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  version="1.1"
+                  viewBox="0 0 24 24"
+                  className="h-5 w-5"
+                >
+                  <path
+                    d="m12 10.11c1.03 0 1.87.84 1.87 1.89 0 1-.84 1.85-1.87 1.85s-1.87-.85-1.87-1.85c0-1.05.84-1.89 1.87-1.89m-4.63 9.89c.63.38 2.01-.2 3.6-1.7-.52-.59-1.03-1.23-1.51-1.9-.82-.08-1.63-.2-2.4-.36-.51 2.14-.32 3.61.31 3.96m.71-5.74l-.29-.51c-.11.29-.22.58-.29.86.27.06.57.11.88.16l-.3-.51m6.54-.76l.81-1.5-.81-1.5c-.3-.53-.62-1-.91-1.47-.54-.03-1.11-.03-1.71-.03s-1.17 0-1.71.03c-.29.47-.61.94-.91 1.47l-.81 1.5.81 1.5c.3.53.62 1 .91 1.47.54.03 1.11.03 1.71.03s1.17 0 1.71-.03c.29-.47.61-.94.91-1.47m-2.62-6.72c-.19.22-.39.45-.59.72h.59.59c-.2-.27-.4-.5-.59-.72m0 10.44c.19-.22.39-.45.59-.72h-.59-.59c.2.27.4.5.59.72m4.62-13.22c-.62-.38-2 .2-3.59 1.7.52.59 1.03 1.23 1.51 1.9.82.08 1.63.2 2.4.36.51-2.14.32-3.61-.32-3.96m-.7 5.74l.29.51c.11-.29.22-.58.29-.86-.27-.06-.57-.11-.88-.16l.3.51m1.45-7.05c1.47.84 1.63 3.05 1.01 5.63 2.54.75 4.37 1.99 4.37 3.68s-1.83 2.93-4.37 3.68c.62 2.58.46 4.79-1.01 5.63-1.46.84-3.45-.12-5.37-1.95-1.92 1.83-3.91 2.79-5.38 1.95-1.46-.84-1.62-3.05-1-5.63-2.54-.75-4.37-1.99-4.37-3.68s1.83-2.93 4.37-3.68c-.62-2.58-.46-4.79 1-5.63 1.47-.84 3.46.12 5.38 1.95 1.92-1.83 3.91-2.79 5.37-1.95m-.29 9.31c.34.75.64 1.5.89 2.26 2.1-.63 3.28-1.53 3.28-2.26s-1.18-1.63-3.28-2.26c-.25.76-.55 1.51-.89 2.26m-10.16 0c-.34-.75-.64-1.5-.89-2.26-2.1.63-3.28 1.53-3.28 2.26s1.18 1.63 3.28 2.26c.25-.76.55-1.51.89-2.26m9 2.26l-.3.51c.31-.05.61-.1.88-.16-.07-.28-.18-.57-.29-.86l-.29.51m-2.89 4.04c1.59 1.5 2.97 2.08 3.59 1.7.64-.35.83-1.82.32-3.96-.77.16-1.58.28-2.4.36-.48.67-.99 1.31-1.51 1.9m-4.95-8.56l.3-.51c-.31.05-.61.1-.88.16.07.28.18.57.29.86l.29-.51m2.89-4.04c-1.59-1.5-2.97-2.08-3.6-1.7-.63.35-.82 1.82-.31 3.96.77-.16 1.58-.28 2.4-.36.48-.67.99-1.31 1.51-1.9z"
+                    fill="#00bcd4"
+                  />
+                </svg>
+              ),
+            });
+          }}
+        >
           <svg
             width="28"
             height="28"
-            className="fill-gray-50"
+            fill="rgb(106, 115, 125)"
             viewBox="0 0 24 24"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path d="M17.5 0h-9L7 1.5V6H2.5L1 7.5v15.07L2.5 24h12.07L16 22.57V18h4.7l1.3-1.43V4.5L17.5 0zm0 2.12l2.38 2.38H17.5V2.12zm-3 20.38h-12v-15H7v9.07L8.5 18h6v4.5zm6-6h-12v-15H16V6h4.5v10.5z"></path>
           </svg>
-        </div>
-        <div className="flex py-2.5 justify-center border-l-2 border-l-transparent hover:bg-[#1b1f23] cursor-pointer">
+        </Link>
+        <Link
+          href="/github"
+          className={`flex py-2.5 justify-center border-l-2 border-transparent hover:bg-[#1b1f23] cursor-pointer ${
+            pathname === "github" && "border-l-[#f9826c]"
+          }`}
+          onClick={() => {
+            handleAddTab({
+              name: "github",
+              title: "github.md",
+              icon: (
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  version="1.1"
+                  viewBox="0 0 24 24"
+                  className="h-5 w-5"
+                >
+                  <path
+                    d="m2.25 15.75v-8h2l3 3 3-3h2v8h-2v-5.17l-3 3-3-3v5.17h-2m14-8h3v4h2.5l-4 4.5-4-4.5h2.5z"
+                    fill="#42a5f5"
+                  />
+                </svg>
+              ),
+            });
+          }}
+        >
           <svg
             width="28"
             height="28"
@@ -23,8 +79,32 @@ const Sidebar = () => {
           >
             <path d="M21.035 5.257c.91 1.092 1.364 2.366 1.364 3.822 0 5.277-3.002 6.824-5.823 7.279.364.637.455 1.365.455 2.093v3.73c0 .455-.273.728-.637.728a.718.718 0 01-.728-.728v-3.73a2.497 2.497 0 00-.728-2.093l.455-1.183c2.821-.364 5.733-1.274 5.733-6.187 0-1.183-.455-2.275-1.274-3.185l-.182-.727a4.04 4.04 0 00.09-2.73c-.454.09-1.364.273-2.91 1.365l-.547.09a13.307 13.307 0 00-6.55 0l-.547-.09C7.57 2.71 6.66 2.437 6.204 2.437c-.273.91-.273 1.91.09 2.73l-.181.727c-.91.91-1.365 2.093-1.365 3.185 0 4.822 2.73 5.823 5.732 6.187l.364 1.183c-.546.546-.819 1.274-.728 2.002v3.821a.718.718 0 01-.728.728.718.718 0 01-.728-.728V20.18c-3.002.637-4.185-.91-5.095-2.092-.455-.546-.819-1.001-1.274-1.092-.09-.091-.364-.455-.273-.819.091-.364.455-.637.82-.455.91.182 1.455.91 2 1.547.82 1.092 1.639 2.092 4.095 1.547v-.364c-.09-.728.091-1.456.455-2.093-2.73-.546-5.914-2.093-5.914-7.279 0-1.456.455-2.73 1.365-3.822-.273-1.273-.182-2.638.273-3.73l.455-.364C5.749 1.073 7.023.8 9.66 2.437a13.673 13.673 0 016.642 0C18.851.708 20.216.98 20.398 1.072l.455.364c.455 1.274.546 2.548.182 3.821z"></path>
           </svg>
-        </div>
-        <div className="flex py-2.5 justify-center border-l-2 border-l-transparent hover:bg-[#1b1f23] cursor-pointer">
+        </Link>
+        <Link
+          href="/projects"
+          className={`flex py-2.5 justify-center border-l-2 border-transparent hover:bg-[#1b1f23] cursor-pointer ${
+            pathname === "projects" && "border-l-[#f9826c]"
+          }`}
+          onClick={() => {
+            handleAddTab({
+              name: "projects",
+              title: "projects.js",
+              icon: (
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  version="1.1"
+                  viewBox="0 0 24 24"
+                  className="h-5 w-5"
+                >
+                  <path
+                    d="m3 3h18v18h-18v-18m4.73 15.04c.4.85 1.19 1.55 2.54 1.55 1.5 0 2.53-.8 2.53-2.55v-5.78h-1.7v5.74c0 .86-.35 1.08-.9 1.08-.58 0-.82-.4-1.09-.87l-1.38.83m5.98-.18c.5.98 1.51 1.73 3.09 1.73 1.6 0 2.8-.83 2.8-2.36 0-1.41-.81-2.04-2.25-2.66l-.42-.18c-.73-.31-1.04-.52-1.04-1.02 0-.41.31-.73.81-.73.48 0 .8.21 1.09.73l1.31-.87c-.55-.96-1.33-1.33-2.4-1.33-1.51 0-2.48.96-2.48 2.23 0 1.38.81 2.03 2.03 2.55l.42.18c.78.34 1.24.55 1.24 1.13 0 .48-.45.83-1.15.83-.83 0-1.31-.43-1.67-1.03l-1.38.8z"
+                    fill="#ffca28"
+                  />
+                </svg>
+              ),
+            });
+          }}
+        >
           <svg
             width="28"
             height="28"
@@ -34,8 +114,32 @@ const Sidebar = () => {
           >
             <path d="M4.708 5.578L2.061 8.224l2.647 2.646-.708.708-3-3V7.87l3-3 .708.708zm7-.708L11 5.578l2.647 2.646L11 10.87l.708.708 3-3V7.87l-3-3zM4.908 13l.894.448 5-10L9.908 3l-5 10z"></path>
           </svg>
-        </div>
-        <div className="flex py-2.5 justify-center border-l-2 border-l-transparent hover:bg-[#1b1f23] cursor-pointer">
+        </Link>
+        <Link
+          href="/articles"
+          className={`flex py-2.5 justify-center border-l-2 border-transparent hover:bg-[#1b1f23] cursor-pointer ${
+            pathname === "articles" && "border-l-[#f9826c]"
+          }`}
+          onClick={() => {
+            handleAddTab({
+              name: "articles",
+              title: "articles.json",
+              icon: (
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  version="1.1"
+                  viewBox="0 0 24 24"
+                  className="h-5 w-5"
+                >
+                  <path
+                    d="m5 3h2v2h-2v5a2 2 0 0 1 -2 2 2 2 0 0 1 2 2v5h2v2h-2c-1.07-.27-2-.9-2-2v-4a2 2 0 0 0 -2 -2h-1v-2h1a2 2 0 0 0 2 -2v-4a2 2 0 0 1 2 -2m14 0a2 2 0 0 1 2 2v4a2 2 0 0 0 2 2h1v2h-1a2 2 0 0 0 -2 2v4a2 2 0 0 1 -2 2h-2v-2h2v-5a2 2 0 0 1 2 -2 2 2 0 0 1 -2 -2v-5h-2v-2h2m-7 12a1 1 0 0 1 1 1 1 1 0 0 1 -1 1 1 1 0 0 1 -1 -1 1 1 0 0 1 1 -1m-4 0a1 1 0 0 1 1 1 1 1 0 0 1 -1 1 1 1 0 0 1 -1 -1 1 1 0 0 1 1 -1m8 0a1 1 0 0 1 1 1 1 1 0 0 1 -1 1 1 1 0 0 1 -1 -1 1 1 0 0 1 1 -1z"
+                    fill="#fbc02d"
+                  />
+                </svg>
+              ),
+            });
+          }}
+        >
           <svg
             width="28"
             height="28"
@@ -45,8 +149,32 @@ const Sidebar = () => {
           >
             <path d="M13.23 1h-1.46L3.52 9.25l-.16.22L1 13.59 2.41 15l4.12-2.36.22-.16L15 4.23V2.77L13.23 1zM2.41 13.59l1.51-3 1.45 1.45-2.96 1.55zm3.83-2.06L4.47 9.76l8-8 1.77 1.77-8 8z"></path>
           </svg>
-        </div>
-        <div className="flex py-2.5 justify-center border-l-2 border-l-transparent hover:bg-[#1b1f23] cursor-pointer">
+        </Link>
+        <Link
+          href="/contact"
+          className={`flex py-2.5 justify-center border-l-2 border-transparent hover:bg-[#1b1f23] cursor-pointer ${
+            pathname === "contact" && "border-l-[#f9826c]"
+          }`}
+          onClick={() => {
+            handleAddTab({
+              name: "contact",
+              title: "contact.css",
+              icon: (
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  version="1.1"
+                  viewBox="0 0 24 24"
+                  className="h-5 w-5"
+                >
+                  <path
+                    d="m5 3l-.65 3.34h13.59l-.44 2.16h-13.58l-.66 3.33h13.59l-.76 3.81-5.48 1.81-4.75-1.81.33-1.64h-3.34l-.79 4 7.85 3 9.05-3 1.2-6.03.24-1.21 1.54-7.76h-16.94z"
+                    fill="#42a5f5"
+                  />
+                </svg>
+              ),
+            });
+          }}
+        >
           <svg
             width="28"
             height="28"
@@ -60,7 +188,7 @@ const Sidebar = () => {
               d="M1 3.5l.5-.5h13l.5.5v9l-.5.5h-13l-.5-.5v-9zm1 1.035V12h12V4.536L8.31 8.9H7.7L2 4.535zM13.03 4H2.97L8 7.869 13.03 4z"
             ></path>
           </svg>
-        </div>
+        </Link>
       </div>
       <div className="flex flex-col">
         <div className="flex py-2.5 justify-center border-l-2 border-l-transparent hover:bg-[#1b1f23] cursor-pointer">

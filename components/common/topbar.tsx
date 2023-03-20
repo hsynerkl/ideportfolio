@@ -14,7 +14,9 @@ const Topbar = () => {
           <li
             key={tab.name}
             className={`flex gap-2 border-t-2 border-transparent items-center hover:bg-[#24292e] ${
-              pathname === tab.name && "bg-[#24292e] border-t-[#f9826c]"
+              (pathname === "/" + tab.name ||
+                (pathname === "/" && tab.name === "home")) &&
+              "bg-[#24292e] border-t-[#f9826c]"
             }`}
           >
             <Link

@@ -1,5 +1,6 @@
 import Explorer from "components/common/explorer";
 import Topbar from "components/common/topbar";
+import Link from "next/link";
 
 const HomeComponent = () => {
   return (
@@ -27,12 +28,18 @@ const HomeComponent = () => {
                 </div>
               </div>
               <div className="absolute -bottom-20 flex gap-5 text-sm sm:text-lg text-white">
-                <button className="bg-[#f9826c] px-4 hover:shadow-2xl hover:opacity-90 transition-all duration-150 font-semibold py-2">
+                <Link
+                  href="projects"
+                  className="bg-[#f9826c] px-4 hover:shadow-2xl hover:opacity-90 transition-all duration-150 font-semibold py-2"
+                >
                   View Work
-                </button>
-                <button className="border-[#f9826c] border px-4 hover:shadow-2xl hover:opacity-90 transition-all duration-150 font-semibold py-2">
+                </Link>
+                <Link
+                  href="contact"
+                  className="border-[#f9826c] border px-4 hover:shadow-2xl hover:opacity-90 transition-all duration-150 font-semibold py-2"
+                >
                   Contact Me
-                </button>
+                </Link>
               </div>
             </div>
           </div>
