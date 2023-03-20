@@ -36,12 +36,14 @@ const Projects = () => {
                   <div className="flex justify-center gap-10 pt-2">
                     <a
                       href="https://github.com/hsynerkl/lexica"
+                      target="_blank"
                       className="text-sm hover:underline hover:text-[#f9826c]"
                     >
                       Source Code
                     </a>
                     <a
                       href="https://hsynerkl.vercel.app/"
+                      target="_blank"
                       className="text-sm hover:underline hover:text-[#f9826c]"
                     >
                       Live Demo
@@ -72,12 +74,14 @@ const Projects = () => {
                   <div className="flex justify-center gap-10 pt-2">
                     <a
                       href="https://github.com/hsynerkl/myportfolio"
+                      target="_blank"
                       className="text-sm hover:underline hover:text-[#f9826c]"
                     >
                       Source Code
                     </a>
                     <a
                       href="https://hsynerkl.vercel.app/"
+                      target="_blank"
                       className="text-sm hover:underline hover:text-[#f9826c]"
                     >
                       Live Demo
