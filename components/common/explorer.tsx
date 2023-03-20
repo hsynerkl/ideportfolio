@@ -9,7 +9,7 @@ const Explorer = () => {
   };
 
   return (
-    <div className="w-2/12 hidden lg:flex flex-col gap-3 bg-[#1f2428] h-full text-white font-semibold">
+    <div className="w-2/12 hidden lg:flex flex-col bg-[#1f2428] h-full text-white font-semibold">
       <p className="p-3 text-sm font-light text-white text-opacity-80">
         EXPLORER
       </p>
@@ -31,9 +31,12 @@ const Explorer = () => {
           <p> PORTFOLIO </p>
         </div>
         {showExplorer ? (
-          <ul className="flex flex-col mt-2 gap-2 text-xs font-medium">
+          <ul className="flex flex-col mt-2 text-xs font-medium">
             <li>
-              <Link href="/home" className="flex gap-2 items-center">
+              <Link
+                href="/home"
+                className="flex gap-2 items-center hover:bg-[#24292e] py-1"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   version="1.1"
@@ -50,7 +53,10 @@ const Explorer = () => {
             </li>
 
             <li>
-              <Link href="/home" className="flex gap-2 items-center">
+              <Link
+                href="/home"
+                className="flex gap-2 items-center hover:bg-[#24292e] py-1"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   version="1.1"
@@ -67,7 +73,10 @@ const Explorer = () => {
             </li>
 
             <li>
-              <Link href="/home" className="flex gap-2 items-center">
+              <Link
+                href="/home"
+                className="flex gap-2 items-center hover:bg-[#24292e] py-1"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   version="1.1"
@@ -84,7 +93,10 @@ const Explorer = () => {
             </li>
 
             <li>
-              <Link href="/home" className="flex gap-2 items-center">
+              <Link
+                href="/home"
+                className="flex gap-2 items-center hover:bg-[#24292e] py-1"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   version="1.1"
@@ -101,7 +113,10 @@ const Explorer = () => {
             </li>
 
             <li>
-              <Link href="/home" className="flex gap-2 items-center">
+              <Link
+                href="/home"
+                className="flex gap-2 items-center hover:bg-[#24292e] py-1"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   version="1.1"
@@ -118,7 +133,10 @@ const Explorer = () => {
             </li>
 
             <li>
-              <Link href="/home" className="flex gap-2 items-center">
+              <Link
+                href="/home"
+                className="flex gap-2 items-center hover:bg-[#24292e] py-1"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   version="1.1"
