@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono&family=Nunito:wght@500&family=Roboto:wght@300&display=swap");
 
 html,
 body {
@@ -31,6 +32,10 @@ a {
   margin: 0 auto; /* Gives that scrolling effect as the typing happens */
   letter-spacing: 0.15em; /* Adjust as needed */
   animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+
+.mono {
+  font-family: "JetBrains Mono", monospace;
 }
 
 /* The typing effect */

@@ -1,13 +1,13 @@
-import HomeComponent from "components/pages/Home";
+import Home from "components/pages/Home";
 import Head from "next/head";
 
-export default function Home() {
+export default function HomePage() {
   return (
     <>
       <Head>
         <title>Hüseyin Erkal | Home</title>
       </Head>
-      <HomeComponent />
+      <Home />
     </>
   );
 }

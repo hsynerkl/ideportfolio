@@ -2,7 +2,7 @@ import Explorer from "components/common/explorer";
 import Topbar from "components/common/topbar";
 import Link from "next/link";
 
-const HomeComponent = () => {
+const Home = () => {
   return (
     <>
       <section className="flex h-[calc(100vh-56.5px)]">
@@ -49,4 +49,4 @@ const HomeComponent = () => {
   );
 };
 
-export default HomeComponent;
+export default Home;
