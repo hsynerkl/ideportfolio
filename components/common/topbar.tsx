@@ -5,7 +5,7 @@ import { useRouter } from "next/router";
 const Topbar = () => {
   const { tabs, handleRemoveTab } = useTabs();
   const router = useRouter();
-  const pathname = router.pathname;
+  const pathname = router.asPath;
 
   return (
     <div className="w-full overflow-x-scroll overflow-y-hidden h-fit bg-[#1f2428] text-white text-[13px] flex">

@@ -4,7 +4,14 @@ import { useState } from "react";
 
 const Explorer = () => {
   const [showExplorer, setShowExplorer] = useState(true);
-  const { handleAddTab } = useTabs();
+
+  const {
+    handleAddTab,
+    folderIsOpen,
+    imagesIsOpen,
+    handleToggleFolder,
+    handleToggleImages,
+  } = useTabs();
 
   const handleShowExplorer = () => {
     setShowExplorer((prev) => !prev);
@@ -189,45 +196,163 @@ const Explorer = () => {
                 <p>projects.js</p>
               </Link>
             </li>
+            <li
+              className={`flex gap-2 items-center hover:bg-[#24292e] py-1 cursor-pointer ${
+                folderIsOpen && "ml-2"
+              }`}
+              onClick={handleToggleFolder}
+            >
+              {!folderIsOpen ? (
+                <svg
+                  className="h-5 w-5 fill-gray-400"
+                  viewBox="0 0 36 36"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M30 9H16.42l-2.31-3.18A2 2 0 0 0 12.49 5H6a2 2 0 0 0-2 2v22a2 2 0 0 0 2 2h24a2 2 0 0 0 2-2V11a2 2 0 0 0-2-2ZM6 11V7h6.49l2.72 4Z" />
+                  <path fill="none" d="M0 0h36v36H0z" />
+                </svg>
+              ) : (
+                <svg
+                  className="h-5 w-5 fill-gray-400"
+                  viewBox="0 0 36 36"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M35.32 13.74a1.71 1.71 0 0 0-1.45-.74h-22.7a2.59 2.59 0 0 0-2.25 1.52 1 1 0 0 0 0 .14L6 25V7h6.49l2.61 3.59a1 1 0 0 0 .81.41H32a2 2 0 0 0-2-2H16.42l-2.31-3.18A2 2 0 0 0 12.49 5H6a2 2 0 0 0-2 2v22.69A1.37 1.37 0 0 0 5.41 31h24.93a1 1 0 0 0 1-.72l4.19-15.1a1.64 1.64 0 0 0-.21-1.44Z" />
+                  <path fill="none" d="M0 0h36v36H0z" />
+                </svg>
+              )}
 
-            <li>
+              <p>assets</p>
+            </li>
+
+            {folderIsOpen && (
+              <li
+                className="flex gap-2 items-center hover:bg-[#24292e] py-1 cursor-pointer ml-4"
+                onClick={handleToggleImages}
+              >
+                {imagesIsOpen ? (
+                  <svg
+                    className="h-5 w-5 fill-gray-400"
+                    viewBox="0 0 36 36"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path d="M35.32 13.74a1.71 1.71 0 0 0-1.45-.74h-22.7a2.59 2.59 0 0 0-2.25 1.52 1 1 0 0 0 0 .14L6 25V7h6.49l2.61 3.59a1 1 0 0 0 .81.41H32a2 2 0 0 0-2-2H16.42l-2.31-3.18A2 2 0 0 0 12.49 5H6a2 2 0 0 0-2 2v22.69A1.37 1.37 0 0 0 5.41 31h24.93a1 1 0 0 0 1-.72l4.19-15.1a1.64 1.64 0 0 0-.21-1.44Z" />
+                    <path fill="none" d="M0 0h36v36H0z" />
+                  </svg>
+                ) : (
+                  <svg
+                    className="h-5 w-5 fill-gray-400"
+                    viewBox="0 0 36 36"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path d="M30 9H16.42l-2.31-3.18A2 2 0 0 0 12.49 5H6a2 2 0 0 0-2 2v22a2 2 0 0 0 2 2h24a2 2 0 0 0 2-2V11a2 2 0 0 0-2-2ZM6 11V7h6.49l2.72 4Z" />
+                    <path fill="none" d="M0 0h36v36H0z" />
+                  </svg>
+                )}
+
+                <p>images</p>
+              </li>
+            )}
+
+            {imagesIsOpen && (
               <Link
-                href="/articles"
-                className="flex gap-2 items-center hover:bg-[#24292e] py-1"
+                href="/lazydeveloper/1"
+                className="flex gap-2 items-center hover:bg-[#24292e] py-1 cursor-pointer ml-6"
                 onClick={() => {
                   handleAddTab({
-                    name: "articles",
-                    title: "articles.json",
+                    name: "lazydeveloper/1",
+                    title: "img1.png",
                     icon: (
                       <svg
+                        viewBox="0 0 36 36"
                         xmlns="http://www.w3.org/2000/svg"
-                        version="1.1"
-                        viewBox="0 0 24 24"
-                        className="h-5 w-5"
+                        className="h-5 w-5 fill-green-600"
                       >
-                        <path
-                          d="m5 3h2v2h-2v5a2 2 0 0 1 -2 2 2 2 0 0 1 2 2v5h2v2h-2c-1.07-.27-2-.9-2-2v-4a2 2 0 0 0 -2 -2h-1v-2h1a2 2 0 0 0 2 -2v-4a2 2 0 0 1 2 -2m14 0a2 2 0 0 1 2 2v4a2 2 0 0 0 2 2h1v2h-1a2 2 0 0 0 -2 2v4a2 2 0 0 1 -2 2h-2v-2h2v-5a2 2 0 0 1 2 -2 2 2 0 0 1 -2 -2v-5h-2v-2h2m-7 12a1 1 0 0 1 1 1 1 1 0 0 1 -1 1 1 1 0 0 1 -1 -1 1 1 0 0 1 1 -1m-4 0a1 1 0 0 1 1 1 1 1 0 0 1 -1 1 1 1 0 0 1 -1 -1 1 1 0 0 1 1 -1m8 0a1 1 0 0 1 1 1 1 1 0 0 1 -1 1 1 1 0 0 1 -1 -1 1 1 0 0 1 1 -1z"
-                          fill="#fbc02d"
-                        />
+                        <path d="M32 4H4a2 2 0 0 0-2 2v24a2 2 0 0 0 2 2h28a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2ZM8.92 8a3 3 0 1 1-3 3 3 3 0 0 1 3-3ZM6 27v-4.1l6-6.08a1 1 0 0 1 1.41 0L16 19.35 8.32 27Zm24 0H11.15l6.23-6.23 5.4-5.4a1 1 0 0 1 1.41 0L30 21.18Z" />
+                        <path fill="none" d="M0 0h36v36H0z" />
                       </svg>
                     ),
                   });
                 }}
               >
                 <svg
+                  viewBox="0 0 36 36"
                   xmlns="http://www.w3.org/2000/svg"
-                  version="1.1"
-                  viewBox="0 0 24 24"
-                  className="h-5 w-5"
+                  className="h-5 w-5 fill-green-600"
                 >
-                  <path
-                    d="m5 3h2v2h-2v5a2 2 0 0 1 -2 2 2 2 0 0 1 2 2v5h2v2h-2c-1.07-.27-2-.9-2-2v-4a2 2 0 0 0 -2 -2h-1v-2h1a2 2 0 0 0 2 -2v-4a2 2 0 0 1 2 -2m14 0a2 2 0 0 1 2 2v4a2 2 0 0 0 2 2h1v2h-1a2 2 0 0 0 -2 2v4a2 2 0 0 1 -2 2h-2v-2h2v-5a2 2 0 0 1 2 -2 2 2 0 0 1 -2 -2v-5h-2v-2h2m-7 12a1 1 0 0 1 1 1 1 1 0 0 1 -1 1 1 1 0 0 1 -1 -1 1 1 0 0 1 1 -1m-4 0a1 1 0 0 1 1 1 1 1 0 0 1 -1 1 1 1 0 0 1 -1 -1 1 1 0 0 1 1 -1m8 0a1 1 0 0 1 1 1 1 1 0 0 1 -1 1 1 1 0 0 1 -1 -1 1 1 0 0 1 1 -1z"
-                    fill="#fbc02d"
-                  />
+                  <path d="M32 4H4a2 2 0 0 0-2 2v24a2 2 0 0 0 2 2h28a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2ZM8.92 8a3 3 0 1 1-3 3 3 3 0 0 1 3-3ZM6 27v-4.1l6-6.08a1 1 0 0 1 1.41 0L16 19.35 8.32 27Zm24 0H11.15l6.23-6.23 5.4-5.4a1 1 0 0 1 1.41 0L30 21.18Z" />
+                  <path fill="none" d="M0 0h36v36H0z" />
                 </svg>
-                <p>articles.json</p>
+
+                <p>img-1.png</p>
               </Link>
-            </li>
+            )}
+            {imagesIsOpen && (
+              <Link
+                href="/lazydeveloper/2"
+                className="flex gap-2 items-center hover:bg-[#24292e] py-1 cursor-pointer ml-6"
+                onClick={() => {
+                  handleAddTab({
+                    name: "lazydeveloper/2",
+                    title: "img2.png",
+                    icon: (
+                      <svg
+                        viewBox="0 0 36 36"
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-5 w-5 fill-green-600"
+                      >
+                        <path d="M32 4H4a2 2 0 0 0-2 2v24a2 2 0 0 0 2 2h28a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2ZM8.92 8a3 3 0 1 1-3 3 3 3 0 0 1 3-3ZM6 27v-4.1l6-6.08a1 1 0 0 1 1.41 0L16 19.35 8.32 27Zm24 0H11.15l6.23-6.23 5.4-5.4a1 1 0 0 1 1.41 0L30 21.18Z" />
+                        <path fill="none" d="M0 0h36v36H0z" />
+                      </svg>
+                    ),
+                  });
+                }}
+              >
+                <svg
+                  viewBox="0 0 36 36"
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-5 w-5 fill-green-600"
+                >
+                  <path d="M32 4H4a2 2 0 0 0-2 2v24a2 2 0 0 0 2 2h28a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2ZM8.92 8a3 3 0 1 1-3 3 3 3 0 0 1 3-3ZM6 27v-4.1l6-6.08a1 1 0 0 1 1.41 0L16 19.35 8.32 27Zm24 0H11.15l6.23-6.23 5.4-5.4a1 1 0 0 1 1.41 0L30 21.18Z" />
+                  <path fill="none" d="M0 0h36v36H0z" />
+                </svg>
+
+                <p>img-2.png</p>
+              </Link>
+            )}
+            {imagesIsOpen && (
+              <Link
+                href="/lazydeveloper/3"
+                className="flex gap-2 items-center hover:bg-[#24292e] py-1 cursor-pointer ml-6"
+                onClick={() => {
+                  handleAddTab({
+                    name: "lazydeveloper/3",
+                    title: "img3.png",
+                    icon: (
+                      <svg
+                        viewBox="0 0 36 36"
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-5 w-5 fill-green-600"
+                      >
+                        <path d="M32 4H4a2 2 0 0 0-2 2v24a2 2 0 0 0 2 2h28a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2ZM8.92 8a3 3 0 1 1-3 3 3 3 0 0 1 3-3ZM6 27v-4.1l6-6.08a1 1 0 0 1 1.41 0L16 19.35 8.32 27Zm24 0H11.15l6.23-6.23 5.4-5.4a1 1 0 0 1 1.41 0L30 21.18Z" />
+                        <path fill="none" d="M0 0h36v36H0z" />
+                      </svg>
+                    ),
+                  });
+                }}
+              >
+                <svg
+                  viewBox="0 0 36 36"
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-5 w-5 fill-green-600"
+                >
+                  <path d="M32 4H4a2 2 0 0 0-2 2v24a2 2 0 0 0 2 2h28a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2ZM8.92 8a3 3 0 1 1-3 3 3 3 0 0 1 3-3ZM6 27v-4.1l6-6.08a1 1 0 0 1 1.41 0L16 19.35 8.32 27Zm24 0H11.15l6.23-6.23 5.4-5.4a1 1 0 0 1 1.41 0L30 21.18Z" />
+                  <path fill="none" d="M0 0h36v36H0z" />
+                </svg>
+
+                <p>img-3.png</p>
+              </Link>
+            )}
 
             <li>
               <Link

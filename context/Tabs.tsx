@@ -7,6 +7,10 @@ type TabsContextProviderProps = {
 
 type TabsContextType = {
   tabs: { name: string; title: string; icon: JSX.Element }[];
+  folderIsOpen: boolean;
+  imagesIsOpen: boolean;
+  handleToggleFolder: () => void;
+  handleToggleImages: () => void;
   handleRemoveTab: (selectedTab: {
     name: string;
     title: string;
@@ -26,6 +30,17 @@ export const TabsContextProvider: FC<TabsContextProviderProps> = ({
 }) => {
   const router = useRouter();
   const [tabs, setTabs] = useState([]);
+  const [folderIsOpen, setFolderIsOpen] = useState(false);
+  const [imagesIsOpen, setImagesIsOpen] = useState(false);
+
+  const handleToggleFolder = () => {
+    setFolderIsOpen((prev) => !prev);
+    if (imagesIsOpen) setImagesIsOpen(false);
+  };
+
+  const handleToggleImages = () => {
+    setImagesIsOpen((prev) => !prev);
+  };
 
   const handleRemoveTab = (selectedTad: {
     name: string;
@@ -40,7 +55,7 @@ export const TabsContextProvider: FC<TabsContextProviderProps> = ({
       const pageIsTrue = filter.filter((tab) =>
         //@ts-ignore
         tab.name.includes(
-          router.pathname === "/" ? "home" : router.pathname.split("/")[1]
+          router.asPath === "/" ? "home" : router.asPath.replace("/", "")
         )
       );
 
@@ -64,7 +79,15 @@ export const TabsContextProvider: FC<TabsContextProviderProps> = ({
     else setTabs((prev) => [...prev, selectedTad]);
   };
 
-  const data = { tabs, handleRemoveTab, handleAddTab };
+  const data = {
+    tabs,
+    handleRemoveTab,
+    handleAddTab,
+    folderIsOpen,
+    imagesIsOpen,
+    handleToggleFolder,
+    handleToggleImages,
+  };
   return <TabsContext.Provider value={data}>{children}</TabsContext.Provider>;
 };
 
