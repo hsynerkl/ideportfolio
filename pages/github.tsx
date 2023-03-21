@@ -1,9 +1,8 @@
 import Github from "components/pages/Github";
 import Head from "next/head";
-import { FC } from "react";
 import { User } from "types/github";
 
-const GithubPage: FC<User> = ({ data }) => {
+export default function GithubPage({ data }: User) {
   return (
     <>
       <Head>
@@ -12,7 +11,7 @@ const GithubPage: FC<User> = ({ data }) => {
       <Github data={data} />
     </>
   );
-};
+}
 
 export async function getStaticProps(context: any) {
   let data;
@@ -36,5 +35,3 @@ export async function getStaticProps(context: any) {
     props: { data },
   };
 }
-
-export default Github;
