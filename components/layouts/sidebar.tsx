@@ -8,7 +8,7 @@ const Sidebar = () => {
   const { handleAddTab } = useTabs();
 
   return (
-    <div className="absolute flex flex-col justify-between left-0 top-8 w-16 pb-8 bg-[#24292e] text-white h-[calc(100%-32px)]">
+    <div className="absolute flex flex-col justify-between left-0 top-8 w-10 sm:w-16 pb-8 bg-[#24292e] text-white h-[calc(100%-32px)]">
       <div className="flex flex-col">
         <Link
           href="/home"
@@ -36,11 +36,10 @@ const Sidebar = () => {
           }}
         >
           <svg
-            width="28"
-            height="28"
             fill="rgb(106, 115, 125)"
             viewBox="0 0 24 24"
             xmlns="http://www.w3.org/2000/svg"
+            className="h-5 w-5 sm:h-7 sm:w-7"
           >
             <path d="M17.5 0h-9L7 1.5V6H2.5L1 7.5v15.07L2.5 24h12.07L16 22.57V18h4.7l1.3-1.43V4.5L17.5 0zm0 2.12l2.38 2.38H17.5V2.12zm-3 20.38h-12v-15H7v9.07L8.5 18h6v4.5zm6-6h-12v-15H16V6h4.5v10.5z"></path>
           </svg>
@@ -71,8 +70,7 @@ const Sidebar = () => {
           }}
         >
           <svg
-            width="28"
-            height="28"
+            className="h-5 w-5 sm:h-7 sm:w-7"
             viewBox="0 0 24 24"
             xmlns="http://www.w3.org/2000/svg"
             fill="rgb(106, 115, 125)"
@@ -106,8 +104,7 @@ const Sidebar = () => {
           }}
         >
           <svg
-            width="28"
-            height="28"
+            className="h-5 w-5 sm:h-7 sm:w-7"
             viewBox="0 0 16 16"
             xmlns="http://www.w3.org/2000/svg"
             fill="rgb(106, 115, 125)"
@@ -141,8 +138,7 @@ const Sidebar = () => {
           }}
         >
           <svg
-            width="28"
-            height="28"
+            className="h-5 w-5 sm:h-7 sm:w-7"
             viewBox="0 0 16 16"
             xmlns="http://www.w3.org/2000/svg"
             fill="rgb(106, 115, 125)"
@@ -176,15 +172,14 @@ const Sidebar = () => {
           }}
         >
           <svg
-            width="28"
-            height="28"
+            className="h-5 w-5 sm:h-7 sm:w-7"
             viewBox="0 0 16 16"
             xmlns="http://www.w3.org/2000/svg"
             fill="rgb(106, 115, 125)"
           >
             <path
-              fillRule="evenodd"
-              clipRule="evenodd"
+              fill-rule="evenodd"
+              clip-rule="evenodd"
               d="M1 3.5l.5-.5h13l.5.5v9l-.5.5h-13l-.5-.5v-9zm1 1.035V12h12V4.536L8.31 8.9H7.7L2 4.535zM13.03 4H2.97L8 7.869 13.03 4z"
             ></path>
           </svg>
@@ -193,8 +188,7 @@ const Sidebar = () => {
       <div className="flex flex-col">
         <div className="flex py-2.5 justify-center border-l-2 border-l-transparent hover:bg-[#1b1f23] cursor-pointer">
           <svg
-            width="28"
-            height="28"
+            className="h-5 w-5 sm:h-7 sm:w-7"
             viewBox="0 0 16 16"
             xmlns="http://www.w3.org/2000/svg"
             fill="rgb(106, 115, 125)"
@@ -204,15 +198,14 @@ const Sidebar = () => {
         </div>
         <div className="flex py-2.5 justify-center border-l-2 border-l-transparent hover:bg-[#1b1f23] cursor-pointer">
           <svg
-            width="28"
-            height="28"
+            className="h-5 w-5 sm:h-7 sm:w-7"
             viewBox="0 0 24 24"
             xmlns="http://www.w3.org/2000/svg"
             fill="rgb(106, 115, 125)"
           >
             <path
-              fillRule="evenodd"
-              clipRule="evenodd"
+              fill-rule="evenodd"
+              clip-rule="evenodd"
               d="M19.85 8.75l4.15.83v4.84l-4.15.83 2.35 3.52-3.43 3.43-3.52-2.35-.83 4.15H9.58l-.83-4.15-3.52 2.35-3.43-3.43 2.35-3.52L0 14.42V9.58l4.15-.83L1.8 5.23 5.23 1.8l3.52 2.35L9.58 0h4.84l.83 4.15 3.52-2.35 3.43 3.43-2.35 3.52zm-1.57 5.07l4-.81v-2l-4-.81-.54-1.3 2.29-3.43-1.43-1.43-3.43 2.29-1.3-.54-.81-4h-2l-.81 4-1.3.54-3.43-2.29-1.43 1.43L6.38 8.9l-.54 1.3-4 .81v2l4 .81.54 1.3-2.29 3.43 1.43 1.43 3.43-2.29 1.3.54.81 4h2l.81-4 1.3-.54 3.43 2.29 1.43-1.43-2.29-3.43.54-1.3zm-8.186-4.672A3.43 3.43 0 0112 8.57 3.44 3.44 0 0115.43 12a3.43 3.43 0 11-5.336-2.852zm.956 4.274c.281.188.612.288.95.288A1.7 1.7 0 0013.71 12a1.71 1.71 0 10-2.66 1.422z"
             ></path>
           </svg>

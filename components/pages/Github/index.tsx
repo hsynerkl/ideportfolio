@@ -2,6 +2,7 @@ import Explorer from "components/common/explorer";
 import Topbar from "components/common/topbar";
 import Image from "next/image";
 import { FC } from "react";
+import GitHubCalendar from "react-github-calendar";
 import { User } from "types/github";
 
 const Github: FC<User> = ({ data }) => {
@@ -11,8 +12,8 @@ const Github: FC<User> = ({ data }) => {
         <Explorer />
         <div className="flex w-full flex-col">
           <Topbar />
-          <div className="h-full w-full bg-[#24292e] flex flex-col justify-center sm:py-8 sm:px-8 p-4">
-            <div className="flex flex-col max-w-xl h-full w-full ">
+          <div className="h-full bg-[#24292e] sm:py-8 sm:px-8 p-4">
+            <div className="flex flex-col max-w-xl w-fit ">
               <div className="h-fit w-fit rounded-full bg-white overflow-hidden">
                 <Image
                   src={data?.avatar_url}
@@ -49,9 +50,15 @@ const Github: FC<User> = ({ data }) => {
               <p className="text-sm text-white font-semibold">
                 {data?.company}
               </p>
-              <p className="text-sm text-white font-semibold">
+              <p className="text-sm text-white font-semibold mb-3">
                 {data?.location}
               </p>
+              <GitHubCalendar
+                username="hsynerkl"
+                hideColorLegend
+                hideMonthLabels
+                hideTotalCount
+              />
               <a
                 href="https://github.com/hsynerkl"
                 target="_blank"

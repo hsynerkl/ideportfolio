@@ -12,7 +12,7 @@ const Layout: FC<LayoutProps> = ({ children }) => {
     <>
       <Header />
       <Sidebar />
-      <main className="ml-16">{children}</main>
+      <main className="ml-10 sm:ml-16">{children}</main>
       <Footer />
     </>
   );
