@@ -33,7 +33,7 @@ const Home = () => {
               <div className="absolute -bottom-20 flex gap-5 text-sm sm:text-lg text-white">
                 <Link
                   href="projects"
-                  className="bg-[#f9826c] px-4 hover:shadow-2xl hover:opacity-90 transition-all duration-150 font-semibold py-2"
+                  className="bg-[#f9826c] px-4 hover:opacity-75 transition-all duration-150 font-semibold py-2"
                   onClick={() => {
                     handleAddTab({
                       name: "projects",
@@ -58,7 +58,7 @@ const Home = () => {
                 </Link>
                 <Link
                   href="contact"
-                  className="border-[#f9826c] border px-4 hover:shadow-2xl hover:opacity-90 transition-all duration-150 font-semibold py-2"
+                  className="border-[#f9826c] border px-4 hover:opacity-75 transition-all duration-150 font-semibold py-2"
                   onClick={() => {
                     handleAddTab({
                       name: "contact",

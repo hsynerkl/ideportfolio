@@ -5,8 +5,6 @@ import { FC } from "react";
 import { User } from "types/github";
 
 const Github: FC<User> = ({ data }) => {
-  console.log(data);
-
   return (
     <>
       <section className="flex h-[calc(100vh-56.5px)]">
@@ -53,6 +51,14 @@ const Github: FC<User> = ({ data }) => {
               <p className="text-sm text-white font-semibold">
                 {data?.location}
               </p>
+              <a
+                href="https://github.com/hsynerkl"
+                target="_blank"
+                rel="noreferrer"
+                className="px-4 py-2 bg-[#f9826c] w-fit my-4 text-white rounded-sm hover:opacity-75 transition-opacity duration-150 shadow-sm"
+              >
+                Go to Github
+              </a>
             </div>
           </div>
         </div>
