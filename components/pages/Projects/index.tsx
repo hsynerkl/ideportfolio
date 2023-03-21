@@ -42,7 +42,7 @@ const Projects = () => {
                       Source Code
                     </a>
                     <a
-                      href="https://hsynerkl.vercel.app/"
+                      href="https://lexica-seven.vercel.app/"
                       target="_blank"
                       className="text-sm hover:underline hover:text-[#f9826c]"
                     >
