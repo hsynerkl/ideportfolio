@@ -1,14 +1,23 @@
+import DesktopBg from "assets/images/desktopbg.jpeg";
 import { useTabs } from "context/Tabs";
 
-const Header = () => {
+const Desktop = () => {
   const { handleToggleVscode } = useTabs();
   return (
-    <header className="h-8 bg-[#1F2428] px-2 flex justify-between text-white text-[13px] font-medium items-center">
-      <div className="flex gap-3 items-center [&>p]:cursor-pointer">
+    <section
+      className="h-screen object-cover bg-bottom p-6"
+      style={{
+        background: `url(${DesktopBg.src})`,
+      }}
+    >
+      <div
+        className="py-2 px-4 flex flex-col group border-transparent border cursor-pointer hover:bg-blue-500 hover:bg-opacity-30 hover:border-blue-500 w-fit"
+        onDoubleClick={handleToggleVscode}
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 256 256"
-          className="h-4 w-4 cursor-pointer"
+          className="h-10 w-10 cursor-pointer"
         >
           <mask
             id="mask0"
@@ -51,25 +60,10 @@ const Header = () => {
             />
           </g>
         </svg>
-        <p className="md:block hidden">File</p>
-        <p className="md:block hidden">Edit</p>
-        <p className="md:block hidden">View</p>
-        <p className="md:block hidden">Go</p>
-        <p className="md:block hidden">Run</p>
-        <p className="md:block hidden">Terminal</p>
-        <p className="md:block hidden">Help</p>
+        <p className="text-xs font-medium mt-2 text-white">VSCode</p>
       </div>
-      <p>Hüseyin Erkal - Visual Studio Code</p>
-      <div className="flex gap-2">
-        <div className="h-4 w-4 rounded-full bg-yellow-200 cursor-pointer"></div>
-        <div className="h-4 w-4 rounded-full bg-green-400 cursor-pointer"></div>
-        <div
-          className="h-4 w-4 rounded-full bg-red-400 cursor-pointer"
-          onClick={handleToggleVscode}
-        ></div>
-      </div>
-    </header>
+    </section>
   );
 };
 
-export default Header;
+export default Desktop;

@@ -9,6 +9,7 @@ type TabsContextType = {
   tabs: { name: string; title: string; icon: JSX.Element }[];
   folderIsOpen: boolean;
   imagesIsOpen: boolean;
+  vscodeIsOpen: boolean;
   handleToggleFolder: () => void;
   handleToggleImages: () => void;
   handleRemoveTab: (selectedTab: {
@@ -21,6 +22,7 @@ type TabsContextType = {
     title: string;
     icon: JSX.Element;
   }) => void;
+  handleToggleVscode: () => void;
 };
 
 const TabsContext = createContext({} as TabsContextType);
@@ -32,6 +34,12 @@ export const TabsContextProvider: FC<TabsContextProviderProps> = ({
   const [tabs, setTabs] = useState([]);
   const [folderIsOpen, setFolderIsOpen] = useState(false);
   const [imagesIsOpen, setImagesIsOpen] = useState(false);
+  const [vscodeIsOpen, setVscodeIsOpen] = useState(false);
+
+  const handleToggleVscode = () => {
+    setVscodeIsOpen((prev) => !prev);
+    if (vscodeIsOpen) router.push("/");
+  };
 
   const handleToggleFolder = () => {
     setFolderIsOpen((prev) => !prev);
@@ -81,12 +89,14 @@ export const TabsContextProvider: FC<TabsContextProviderProps> = ({
 
   const data = {
     tabs,
+    vscodeIsOpen,
     handleRemoveTab,
     handleAddTab,
     folderIsOpen,
     imagesIsOpen,
     handleToggleFolder,
     handleToggleImages,
+    handleToggleVscode,
   };
   return <TabsContext.Provider value={data}>{children}</TabsContext.Provider>;
 };

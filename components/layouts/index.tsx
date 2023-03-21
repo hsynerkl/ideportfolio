@@ -1,3 +1,4 @@
+import { useTabs } from "context/Tabs";
 import { FC, ReactNode } from "react";
 import Footer from "./footer";
 import Header from "./header";
@@ -8,12 +9,20 @@ type LayoutProps = {
 };
 
 const Layout: FC<LayoutProps> = ({ children }) => {
+  const { vscodeIsOpen } = useTabs();
+
   return (
     <>
-      <Header />
-      <Sidebar />
-      <main className="ml-10 sm:ml-16">{children}</main>
-      <Footer />
+      {!vscodeIsOpen ? (
+        <main className="select-none">{children}</main>
+      ) : (
+        <>
+          <Header />
+          <Sidebar />
+          <main className="ml-10 sm:ml-16 select-none">{children}</main>
+          <Footer />
+        </>
+      )}
     </>
   );
 };
