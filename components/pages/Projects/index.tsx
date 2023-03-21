@@ -13,7 +13,7 @@ const Projects = () => {
           <Topbar />
           <div className="h-full w-full bg-[#24292e] flex flex-col text-xl pt-8 px-8 text-white font-medium">
             <p className="mono">Some of what i&apos;ve done so far</p>
-            <div className="grid md:grid-cols-2 xl:grid-cols-3 mt-4 gap-10 overflow-auto pb-8">
+            <div className="grid md:grid-cols-2 xl:grid-cols-3 mt-4 gap-10 overflow-x-auto pb-8">
               <div className="bg-[#1f2428] rounded-lg">
                 <div className="aspect-h-1 aspect-w-2">
                   <Image src={Lexica} alt="cardimg" fill />
