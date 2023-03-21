@@ -27,7 +27,7 @@ const Topbar = () => {
               <p>{tab.title}</p>
             </Link>
             <p
-              className="p-1 pr-2 cursor-pointer text-lg mb-[2px]"
+              className="px-3 pb-[2px] cursor-pointer hover:bg-black hover:bg-opacity-20  text-lg"
               onClick={(e) => {
                 e.stopPropagation();
                 handleRemoveTab(tab);
