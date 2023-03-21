@@ -1,13 +1,13 @@
-import HomeComponent from "components/pages/Home";
 import Head from "next/head";
+import Vscode from "./vscode";
 
-export default function Home() {
+export default function VSCodePage() {
   return (
     <>
       <Head>
-        <title>Hüseyin Erkal | Home</title>
+        <title>Hüseyin Erkal | VSCode</title>
       </Head>
-      <HomeComponent />
+      <Vscode />
     </>
   );
 }
