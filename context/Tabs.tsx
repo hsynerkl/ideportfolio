@@ -1,4 +1,11 @@
-import { createContext, FC, ReactNode, useContext, useState } from "react";
+import {
+  createContext,
+  FC,
+  ReactNode,
+  useContext,
+  useLayoutEffect,
+  useState,
+} from "react";
 import { useRouter } from "next/router";
 
 type TabsContextProviderProps = {
@@ -86,6 +93,14 @@ export const TabsContextProvider: FC<TabsContextProviderProps> = ({
     //@ts-ignore
     else setTabs((prev) => [...prev, selectedTad]);
   };
+
+  useLayoutEffect(() => {
+    if (router.pathname !== "/") {
+      if (!vscodeIsOpen) {
+        router.push("/");
+      }
+    }
+  }, [router]);
 
   const data = {
     tabs,
