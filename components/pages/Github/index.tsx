@@ -19,6 +19,7 @@ const Github: FC<User> = ({ data }) => {
                   width={180}
                   height={180}
                   alt="avatar"
+                  priority
                 />
               </div>
               <p className="font-semibold text-white text-xl mt-4">
