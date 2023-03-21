@@ -8,7 +8,7 @@ const Topbar = () => {
   const pathname = router.pathname;
 
   return (
-    <div className="w-full overflow-x-scroll h-fit bg-[#1f2428] text-white text-[13px] flex">
+    <div className="w-full overflow-x-scroll overflow-y-hidden h-fit bg-[#1f2428] text-white text-[13px] flex">
       <ul className="flex text-xs font-medium">
         {tabs.map((tab) => (
           <li
