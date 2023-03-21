@@ -20,7 +20,7 @@ export async function getStaticProps(context: any) {
     await fetch(`https://api.github.com/users/hsynerkl`, {
       headers: {
         Accept: "application/vnd.github+json",
-        Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
+        Authorization: `Bearer${process.env.GITHUB_TOKEN}`,
       },
     })
       .then((res) => res.json())

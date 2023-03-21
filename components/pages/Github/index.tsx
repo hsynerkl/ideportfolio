@@ -5,6 +5,8 @@ import { FC } from "react";
 import { User } from "types/github";
 
 const Github: FC<User> = ({ data }) => {
+  console.log(data);
+
   return (
     <>
       <section className="flex h-[calc(100vh-56.5px)]">
