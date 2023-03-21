@@ -46,6 +46,9 @@ export const TabsContextProvider: FC<TabsContextProviderProps> = ({
   const handleToggleVscode = () => {
     setVscodeIsOpen((prev) => !prev);
     if (vscodeIsOpen) router.push("/");
+    else {
+      setTabs([]);
+    }
   };
 
   const handleToggleFolder = () => {
