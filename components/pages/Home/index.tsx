@@ -12,7 +12,7 @@ const Home = () => {
         <Explorer />
         <div className="flex w-full flex-col">
           <Topbar />
-          <div className="h-full w-full bg-[#24292e] sm:flex pt-[calc(45vh-95px)] sm:pt-0 sm:pb-28 items-center px-4 sm:px-8">
+          <div className="h-full w-full bg-[#24292e] sm:flex pt-[calc(45vh-110px)] sm:pt-0 sm:pb-28 items-center px-4 sm:px-8">
             <div className="gap-10 relative flex flex-col text-white text-opacity-10 font-black text-4xl sm:text-9xl select-none">
               <div className="whitespace-nowrap relative">
                 <h2>I BUILD</h2>
