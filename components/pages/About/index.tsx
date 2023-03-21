@@ -8,7 +8,7 @@ const About = () => {
         <Explorer />
         <div className="flex w-full flex-col">
           <Topbar />
-          <div className="h-full w-full bg-[#24292e] flex flex-col py-8 sm:pb-28 px-8 text-white font-medium text-lg">
+          <div className="h-full w-full bg-[#24292e] flex flex-col py-4 sm:pb-28 px-4 sm:px-8 text-white font-medium text-lg">
             <div className="max-w-xl text-[10px] sm:text-sm">
               <span className="text-white text-opacity-20 pr-4">1</span>{" "}
               <span className="text-[#f9826c]">
