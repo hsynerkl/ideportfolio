@@ -7,11 +7,11 @@ import Portfolyo from "assets/images/portfolyo.png";
 const Projects = () => {
   return (
     <>
-      <section className="flex h-[calc(100vh-56.5px)]">
+      <section className="flex h-[calc(100vh-54.5px)] sm:h-[calc(100vh-56.5px)]">
         <Explorer />
         <div className="flex w-full flex-col">
           <Topbar />
-          <div className="h-full w-full bg-[#24292e] flex flex-col text-xl pt-8 px-8 text-white font-medium">
+          <div className="h-full w-full bg-[#24292e] flex flex-col text-xl p-4 sm:pt-8 sm:px-8 text-white font-medium">
             <p className="mono">Some of what i&apos;ve done so far</p>
             <div className="grid md:grid-cols-2 xl:grid-cols-3 mt-4 gap-10 overflow-auto pb-8">
               <div className="bg-[#1f2428] rounded-lg">

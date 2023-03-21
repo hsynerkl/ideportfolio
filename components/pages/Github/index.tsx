@@ -7,7 +7,7 @@ import { User } from "types/github";
 const Github: FC<User> = ({ data }) => {
   return (
     <>
-      <section className="flex h-[calc(100vh-56.5px)]">
+      <section className="flex h-[calc(100vh-54.5px)] sm:h-[calc(100vh-56.5px)]">
         <Explorer />
         <div className="flex w-full flex-col">
           <Topbar />
