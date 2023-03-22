@@ -64,7 +64,11 @@ const About = () => {
 
               <div className="flex">
                 <span className="mr-1 text-white text-opacity-30">11</span>{" "}
-                <p className="ml-5"> {"<title>About</title>"} </p>
+                <p className="ml-5">
+                  <span>{"<title>"}</span>{" "}
+                  <span className="text-white">About</span>{" "}
+                  <span>{"</title>"}</span>
+                </p>
               </div>
 
               <div className="flex">
