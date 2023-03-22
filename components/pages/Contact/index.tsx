@@ -11,9 +11,7 @@ const Contact = () => {
           <div className="h-full w-full bg-[#24292e] flex flex-col sm:py-8 sm:pb-28 p-4 sm:px-8 text-white font-medium text-lg">
             <div className="max-w-xl text-[10px] sm:text-sm">
               <span className="text-white text-opacity-20 pr-4">1</span>{" "}
-              <span className="text-[#f9826c]">
-                const <span className="text-yellow-300">socials </span> = {"{"}
-              </span>
+              <span className="text-[#f9826c]">{".social {"}</span>
               <br></br>
               <span className="text-white text-opacity-20 pr-4">2</span>{" "}
               <span className="sm:pl-4 pl-1">github: </span>{" "}
