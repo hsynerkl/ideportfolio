@@ -12,12 +12,12 @@ const Desktop = () => {
     >
       <div
         className="py-2 px-4 flex flex-col group border-transparent border cursor-pointer hover:bg-blue-500 hover:bg-opacity-30 hover:border-blue-500 w-fit"
-        onDoubleClick={handleToggleVscode}
+        onClick={handleToggleVscode}
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 256 256"
-          className="h-10 w-10 cursor-pointer"
+          className="h-10 w-10 cursor-pointer fill-[#0065A9]"
         >
           <mask
             id="mask0"
