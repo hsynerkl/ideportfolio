@@ -5,7 +5,7 @@ const Desktop = () => {
   const { handleToggleVscode } = useTabs();
   return (
     <section
-      className="h-screen bg-bottom p-6"
+      className="h-screen bg-bottom p-6 bg-no-repeat"
       style={{
         background: `url(${DesktopBg.src})`,
       }}
